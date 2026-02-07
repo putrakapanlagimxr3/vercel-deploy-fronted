@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Deployer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-rocket"></i> Vercel Deployer</h1>
+            <p class="subtitle">Deploy website ke Vercel dalam 1 klik</p>
+            <div class="quota-display" id="quotaDisplay">
+                <i class="fas fa-tachometer-alt"></i>
+                <span id="quotaText">Mengecek quota...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2><i class="fas fa-globe"></i> Nama Website</h2>
+                <input type="text" id="websiteName" placeholder="contoh: website-saya" 
+                       pattern="[a-z0-9-]+" title="Huruf kecil, angka, dan tanda hubung saja">
+                <p class="hint">Akan menjadi: <span id="namePreview">nama-kamu.vercel.app</span></p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-upload"></i> Upload File</h2>
+                <div class="upload-zone" onclick="document.getElementById('fileUpload').click()">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <p id="fileName">Pilih file HTML atau ZIP</p>
+                    <p class="hint">Upload file HTML tunggal atau file ZIP yang berisi website kamu</p>
+                </div>
+                <input type="file" id="fileUpload" accept=".html,.htm,.zip" hidden>
+            </div>
+
+            <button id="deployBtn" class="deploy-btn">
+                <i class="fas fa-paper-plane"></i> Deploy ke Vercel
+            </button>
+
+            <div id="statusMessage" class="status-message hidden"></div>
+
+            <div id="resultCard" class="result-card hidden">
+                <h3><i class="fas fa-check-circle success"></i> Deploy Berhasil!</h3>
+                <p>Website kamu sudah live di:</p>
+                <a id="deployedUrl" href="#" target="_blank" class="deployed-url"></a>
+                <button id="newDeployBtn" class="new-deploy-btn">
+                    <i class="fas fa-plus"></i> Deploy Baru
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Backend API: <code>deploy-vercel-fitv.vercel.app</code></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
