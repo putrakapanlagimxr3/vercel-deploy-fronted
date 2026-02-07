@@ -13,7 +13,7 @@ const namePreview = document.getElementById('namePreview');
 
 // ======== CONFIG ========
 // INI YANG HARUS DICOCOKKAN DENGAN BACKEND KAMU
-const API_URL = 'https://web-deploy-ditzx.vercel.app/api/deploy';
+const API_URL = 'https://vercel-deploy-backend-fix.vercel.app/api/deploy';
 // ========================
 
 let selectedFile = null;
