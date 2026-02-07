@@ -13,7 +13,7 @@ const namePreview = document.getElementById('namePreview');
 
 // ======== CONFIG ========
 // INI YANG HARUS DICOCOKKAN DENGAN BACKEND KAMU
-const API_URL = 'https://deploy-vercel-fitv.vercel.app/api/deploy';
+const API_URL = 'https://myapi-artzzy.vercel.app/api/deploy';
 // ========================
 
 let selectedFile = null;
